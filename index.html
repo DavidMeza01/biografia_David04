@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login y Biografía</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script defer>
+document.addEventListener("DOMContentLoaded", function(){
+
+const form = document.getElementById("login-form");
+const loginContainer = document.getElementById("login-container");
+const helloContainer = document.getElementById("hello-container");
+const error = document.getElementById("login-error");
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+
+const user = document.getElementById("username").value;
+const pass = document.getElementById("password").value;
+
+if(user === "admin" && pass === "1234"){
+loginContainer.style.display = "none";
+helloContainer.style.display = "block";
+}else{
+error.style.display = "block";
+}
+
+});
+
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login-container">
+<h2>Iniciar Sesión</h2>
+
+<form id="login-form">
+<label>Usuario:</label>
+<input type="text" id="username" required><br><br>
+
+<label>Contraseña:</label>
+<input type="password" id="password" required><br><br>
+
+<button type="submit">Entrar</button>
+</form>
+
+<p id="login-error" style="color:red; display:none;">
+Usuario o contraseña incorrectos
+</p>
+
+</div>
+
+
+<!-- BIOGRAFÍA -->
+<div id="hello-container" style="display:none;">
+
+<header>
+<h1>David Meza Rincón</h1>
+<p>Nacido el 4 de mayo de 2008</p>
+</header>
+
+<section class="contenedor">
+
+<img src="david.jpg" alt="Foto de David">
+
+<div class="texto">
+
+<h2>Sobre mí</h2>
+<p>
+Mi nombre es David Meza Rincón. Nací el 4 de mayo de 2008.
+Me gusta el fútbol, la música y los videojuegos.
+Siempre me ha gustado participar en actividades deportivas
+y convivir con mis amigos.
+</p>
+
+<h2>Trayectoria Académica</h2>
+<p>
+Estudié el kínder, aunque no recuerdo el nombre de la institución.
+Después cursé la primaria en la escuela Sor Juana Inés de la Cruz durante cinco años.
+El sexto año lo terminé durante la pandemia.
+</p>
+
+<p>
+Posteriormente ingresé a la telesecundaria, donde fuimos campeones
+en un torneo escolar. Actualmente estudio en el CBTIS 260
+y estoy próximo a graduarme.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- BOTÓN PARA VER VIDEO -->
+<div style="text-align:center; margin-top:40px;">
+
+<h2>Mi presentación</h2>
+
+<a href="presentacion.mp4" target="_blank">
+<button style="padding:12px 25px; font-size:16px; cursor:pointer;">
+Ver mi video
+</button>
+</a>
+
+</div>
+
+
+<!-- BOTÓN WHATSAPP -->
+<div class="whatsapp-container">
+<a href="https://wa.me/5212215324937?text=Hola%20David%20quiero%20contactarte" target="_blank">
+Contactarme por WhatsApp
+</a>
+</div>
+
+
+<footer>
+<p>© 2024 David Meza Rincón</p>
+</footer>
+
+</div>
+
+</body>
+</html>
